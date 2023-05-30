@@ -1,0 +1,44 @@
+{
+  "name": "react-native-custom-bcrypt",
+  "description": "Optimized bcrypt in plain JavaScript with zero dependencies. Compatible to 'bcrypt'.",
+  "version": "1.0.0",
+  "author": "Dexter Eromosele <> (https://github.com/Eromosele-Dexter)",
+  "contributors": [
+    "Anjola Adeyemi <> (https://github.com/Anjola85)",
+    "Kamsi Idimogu <> (https://github.com/Kamsi-idimogu)"
+  ],
+  "repository": {
+    "type": "url",
+    "url": "https://github.com/Anjola85/react-native-custom-bcrypt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Anjola85/react-native-custom-bcrypt.git"
+  },
+  "keywords": [
+    "bcrypt",
+    "password",
+    "auth",
+    "authentication",
+    "encryption",
+    "crypt",
+    "crypto"
+  ],
+  "main": "index.js",
+  "browser": "dist/bcrypt.js",
+  "dependencies": {},
+  "devDependencies": {
+    "testjs": "~1",
+    "closurecompiler": "~1",
+    "metascript": "~0.18",
+    "bcrypt": "latest",
+    "utfx": "~1"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "node node_modules/testjs/bin/testjs",
+    "build": "node scripts/build.js",
+    "compile": "node node_modules/closurecompiler/bin/ccjs dist/bcrypt.js --compilation_level=SIMPLE_OPTIMIZATIONS --create_source_map=dist/bcrypt.min.map > dist/bcrypt.min.js",
+    "compress": "gzip -c -9 dist/bcrypt.min.js > dist/bcrypt.min.js.gz",
+    "make": "npm run build && npm run compile && npm run compress && npm test"
+  }
+}
